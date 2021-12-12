@@ -1,14 +1,14 @@
 const socket=io('/');
 const videoGrid=document.getElementById('video-grid');
-
+const peer = new Peer(undefined,{
+  path:'/peerjs',
+  host:'/',
+  port:'443'
+}); 
 const myVideo=document.createElement('video');
 myVideo.muted=true;
 const peers = {}
-var peer = new Peer(undefined,{
-    path:'/peerjs',
-    host:'/',
-    port:'3000'
-}); 
+
 
 let myVideoStream;
 navigator.mediaDevices.getUserMedia({
@@ -32,11 +32,9 @@ navigator.mediaDevices.getUserMedia({
   })
 
     socket.on('user-connected',(userId)=>{
-        setTimeout(function(){
-            newUserConnected(userId,stream);
-        },1000)
-        
-        
+      setTimeout(() => {
+        newUserConnected(userId, stream)
+      }, 3000) 
     })
 })
 
@@ -150,4 +148,4 @@ const scrollToBottom = () => {
     document.querySelector('.main__play_button').innerHTML = html;
   }
 
-  
+ 
