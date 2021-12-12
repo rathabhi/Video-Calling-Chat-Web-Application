@@ -21,6 +21,11 @@ app.get('/:room',(req,res)=>{
     res.render('room',{roomId:req.params.room})
 })
 
+app.post('/',(req,res)=>{
+    res.render('exit');
+})
+
+
 io.on('connection',socket => {
     socket.on('join-room', (roomId,userId) => {
         console.log("joined room");

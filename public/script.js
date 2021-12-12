@@ -40,7 +40,7 @@ navigator.mediaDevices.getUserMedia({
     })
 })
 
-console.log(ROOM_ID);
+//console.log(ROOM_ID);
 
 socket.on('user-disconnected', userId => {
   if (peers[userId]) peers[userId].close()
@@ -83,7 +83,6 @@ $('html').keydown((e)=>{
 });
 
 socket.on('createMessage',message=>{
-    //console.log(message);
     let li=document.createElement('li');
     li.innerHTML="<b>User</b>"+"<br/>"+message;
     $('ul').append(li);
@@ -150,3 +149,5 @@ const scrollToBottom = () => {
     `
     document.querySelector('.main__play_button').innerHTML = html;
   }
+
+  

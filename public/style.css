@@ -60,7 +60,8 @@ video{
 }
 
 .leave{
-    color:#EB5348;
+    background-color:#d11616;
+    color:#f5f5f5;
 }
 
 .first-block-button:hover {
@@ -96,4 +97,7 @@ video{
 
 .unmute,.stop{
     color: #cc3b33;
+}
+#title{
+    text-align: center;
 }
